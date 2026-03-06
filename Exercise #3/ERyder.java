@@ -1,3 +1,4 @@
+
 public class ERyder {
     private String bikeID;
     private int batteryLevel;
@@ -10,5 +11,5 @@ public class ERyder {
         this.isAvailable = isAvailable;
         this.kmDriven = kmDriven;
     }
-    
+
 }
