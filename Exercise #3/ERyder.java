@@ -10,4 +10,5 @@ public class ERyder {
         this.isAvailable = isAvailable;
         this.kmDriven = kmDriven;
     }
+    
 }
