@@ -12,5 +12,4 @@ public class Main {
         bike.ride();
         bike.printBikeDetails();
     }   
-
 }

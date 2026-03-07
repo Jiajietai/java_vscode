@@ -5,7 +5,6 @@ public class ERyder {
     private int batteryLevel;
     private boolean isAvailable;
     private float kmDriven;
-
     public ERyder(String bikeID, int batteryLevel, boolean isAvailable, float kmDriven) {
         this.bikeID = bikeID;
         this.batteryLevel = batteryLevel;
