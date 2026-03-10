@@ -96,6 +96,6 @@ public class ERyder {
     }
 
     public void getcalculateFare() {
-
+        calculateFare(totalUsageInMinutes);
     }
 }
