@@ -2,7 +2,7 @@ package Exercise;
 
 public class ERyder {
 
-    private static final String COMPANY_NAME = "ERyder";
+    //private static final String COMPANY_NAME = "ERyder";
     private static final double BASE_FARE = 1.0;
     private static final double PER_MINUTE_FARE = 0.5;
 
