@@ -2,6 +2,7 @@ package Exercise;
 
 public class Main {
     public static void main(String[] args) {
+
         ERyder bike1 = new ERyder( "Bike01", 90, true, 10.0f);
 
         bike1.ride();
@@ -16,6 +17,7 @@ public class Main {
         bike2.getcalculateFare();
         bike2.printRideDetails(30);
 
+
         String sent1 = "I was very satisfied with the service.";
         String sent2 = "The e-Bike is quite comfortable to ride.";
         String sent3 = "The battery life of the e-Bike is impressive.";
@@ -24,5 +26,11 @@ public class Main {
 
         Feedback feedback1 = new Feedback("John", "Doe", "john.doe@example.com");
         feedback1.analyseFeedback(true, sent1, sent2, sent3, sent4, sent5);
-    }   
+
+
+        UserRegistration user = new UserRegistration();
+        user.registration();
+        System.out.println(user);
+
+    }  
 }

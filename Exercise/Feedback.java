@@ -17,14 +17,12 @@ public class Feedback {
 
     public void  analyseFeedback(boolean isConcatenation,String sent1, String sent2, String sent3, String sent4, String sent5){
         if (isConcatenation) {
-            feedbackUsingConcatenation(sent1, sent2, sent3, sent4, sent5);
-            checkFeedbackLength(completeFeedback);
-            creatReveiwID(firstName, lastName,completeFeedback);
+            completeFeedback = feedbackUsingConcatenation(sent1, sent2, sent3, sent4, sent5);
         } else {
             completeFeedback = feedbackUsingStringBuilder(sent1, sent2, sent3, sent4, sent5);
-            checkFeedbackLength(completeFeedback);
-            creatReveiwID(firstName, lastName,completeFeedback);
         }
+        checkFeedbackLength(completeFeedback);
+        creatReveiwID(firstName, lastName,completeFeedback);
     }
 
     private String feedbackUsingConcatenation(String sent1, String sent2, String sent3, String sent4, String sent5) {
