@@ -30,12 +30,12 @@ public class UserRegistration {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome to the ERyder Registration.\nHere are your two options:\n1. Register as a Regular User\n2. Register as a VIP User\nPlease enter your choice (1 or 2):");
-        int numofusertype = input.nextInt();
+        int numOfUserType = input.nextInt();
         input.nextLine();
-        if(numofusertype == 1){
+        if(numOfUserType == 1){
             userType = "Regular User";
         }
-        else if(numofusertype == 2){
+        else if(numOfUserType == 2){
             userType = "VIP User";
         }
         else{
@@ -146,7 +146,7 @@ public class UserRegistration {
         if(year >= currentYear || (year == currentYear && month >= currentMonth)){
             System.out.println("The card is still valid");
         }else{
-            System.out.println("Sorry, your card has expired. Please use a different card.\nGoing back to the start fo the registration process…");
+            System.out.println("Sorry, your card has expired. Please use a different card.\nGoing back to the start fo the registration process...");
             registration();
         }
 
