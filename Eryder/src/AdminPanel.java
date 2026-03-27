@@ -12,7 +12,8 @@ public class AdminPanel {
             "\n 2. View Registered Users" +
             "\n 3. Remove Registered Users" +
             "\n 4. Update Registered Users" +
-            "\n 5. EXIT");
+            "\n 5. Demo the Bike Rental System" +
+            "\n 6. EXIT");
         
         Scanner input = new Scanner(System.in);
         int choice = input.nextInt();
@@ -32,6 +33,11 @@ public class AdminPanel {
                 updateRegisteredUsers();
                 break;
             case 5:
+                BikeRental bikeRental = new BikeRental();
+                bikeRental.simulateApplicationInput();
+                break;
+            case 6:
+                System.out.println("Exiting Admin Panel.");
                 break;
             default:
                 System.out.println("”Invalid choice. Please try again");
