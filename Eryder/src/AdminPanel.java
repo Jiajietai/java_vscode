@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 public class AdminPanel {
@@ -33,7 +32,7 @@ public class AdminPanel {
                 updateRegisteredUsers();
                 break;
             case 5:
-                BikeRental bikeRental = new BikeRental();
+                RentalService bikeRental = new RentalService();
                 bikeRental.simulateApplicationInput();
                 break;
             case 6:
