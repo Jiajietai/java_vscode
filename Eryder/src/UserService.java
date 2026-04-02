@@ -215,6 +215,10 @@ public class UserService {
             input.close();
         }
     
-    
     }
+
+    public String getEmailaddress() {
+        return emailAddress;
+    }
+    
 }

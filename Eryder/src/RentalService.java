@@ -1,14 +1,20 @@
-import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class RentalService {
-    private String bikeID;
+    private boolean locationValid;
+    private String location;
 
     UserRegistration user = new UserRegistration();
     ActiveRental activeRental;
     List<ActiveRental> activeRentalsList = new LinkedList<>();
+    Stack<ERyderLog> logStack = new Stack<>();
+
+    public String getLocation() {
+        return location;
+    }
 
     public void simulateApplicationInput(){
         System.out.println("This is the simulation of the e-bike rental process.");
@@ -17,16 +23,29 @@ public class RentalService {
 
         viewActiveRentals();
 
-        System.out.println("Simulating the end of the trip…");
+        Scanner input = new Scanner(System.in);
 
-        removeTrip(bikeID);
+        System.out.println("Please enter your current location:");
+        location = input.nextLine();
+        validateLocation(location);
 
-        System.out.println("Displaying the active rentals after trip end…");
+        input.close();
 
-        viewActiveRentals();
+        if(!locationValid){
+            return;
+        }
+
     }
-    
 
+    private void validateLocation(String location){
+        for(Bike bike : BikeDatabase.bikes){
+            if(bike.getLocation().equals(location) && bike.isAvailable()){
+                System.out.println("A bike is available at the location you requested.");
+                locationValid = true;
+            }
+        }
+        System.out.println(" Sorry, no bikes are available at the location you requested. Please try again later.");
+    }
 
     private void viewActiveRentals(){
         if(activeRentalsList.isEmpty()){
@@ -38,24 +57,4 @@ public class RentalService {
         }
     }
 
-    private void removeTrip(String bikeID){
-        Iterator<ActiveRental> iterator = activeRentalsList.iterator();
-        while (iterator.hasNext()) {
-            ActiveRental currentTrip = iterator.next();
-            if (currentTrip.getBikeID().equals(bikeID)) {
-                iterator.remove();
-                break;
-            }
-        }
-
-        for(Bike bike : BikeDatabase.bikes){
-            if(bike.getBikeID().equals(bikeID)){
-                bike.setIsAvailable(true);
-                bike.setLastUsedTime(LocalDateTime.now());
-                System.out.println("Your trip has ended. Thank you for riding with us.");
-                break;
-                }
-        }
-        
-    }
 }
