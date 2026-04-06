@@ -105,7 +105,7 @@ public class UserService {
             }
 
             RegisteredUsers newUser;
-            if (userType.equalsIgnoreCase("VIP")) {
+            if (userType.equalsIgnoreCase("VIP User")) {
                 newUser = new VIPUser(fullName, emailAddress, dateOfBirth, cardNumber, cardProvider, cardExpiryDate, cvv, userType, lastThreeTrips);} 
             else {
                 newUser = new RegularUser(fullName, emailAddress, dateOfBirth, cardNumber, cardProvider, cardExpiryDate, cvv, userType, lastThreeTrips);}
