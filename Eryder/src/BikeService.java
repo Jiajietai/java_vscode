@@ -15,8 +15,6 @@ public class BikeService {
     private Stack<ERyderLog> logStack = new Stack<>();
     private Queue<BikeRequest> logQue = new ArrayDeque<>();
 
-    RegularUser regularUser;
-    VIPUser vipUser;
     RegisteredUsers user;
     ActiveRental activeRental;
     List<ActiveRental> activeRentalsList = new LinkedList<>();
@@ -101,13 +99,8 @@ public class BikeService {
             logQue.poll();
         }
 
-        if(user.getUserType().equals("VIP")) {
-            double finalFare = vipUser.calculateFare(BASE_FARE);
-            System.out.println("The final fare is: " + finalFare);
-        }else if (user.getUserType().equals("Regular")) {
-            double finalFare = regularUser.calculateFare(BASE_FARE);
-            System.out.println("The final fare is: " + finalFare);
-        }
+        double finalFare = user.calculateFare(BASE_FARE);
+        System.out.println("The final fare is: " + finalFare);
     }
 
     private void viewActiveRentals(){
