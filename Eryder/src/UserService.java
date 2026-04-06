@@ -8,7 +8,6 @@ public class UserService {
     private boolean isRegisteredUser;
     private String emailAddress;
 
-
     UserRegistration user = new UserRegistration();
     ActiveRental activeRental;
     List<ActiveRental> activeRentalsList = new LinkedList<>();
@@ -105,7 +104,11 @@ public class UserService {
             lastThreeTrips[j] = tripDetails.toString();
             }
 
-            RegisteredUsers newUser = new RegisteredUsers(fullName, emailAddress, dateOfBirth, cardNumber, cardProvider, cardExpiryDate, cvv, userType, lastThreeTrips);
+            RegisteredUsers newUser;
+            if (userType.equalsIgnoreCase("VIP")) {
+                newUser = new VIPUser(fullName, emailAddress, dateOfBirth, cardNumber, cardProvider, cardExpiryDate, cvv, userType, lastThreeTrips);} 
+            else {
+                newUser = new RegularUser(fullName, emailAddress, dateOfBirth, cardNumber, cardProvider, cardExpiryDate, cvv, userType, lastThreeTrips);}
             registeredUsers.add(newUser);
         }
 

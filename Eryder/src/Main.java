@@ -9,7 +9,7 @@ public class Main {
         bike1.getcalculateFare();
         bike1.printRideDetails(35);
 
-        ERyder bike2 = new ERyder( "Bike02", 80, true, 5.5f, "JIAJIETAI", 1234567890);
+        ERyder bike2 = new ERyder( "Bike02",  80, true, 5.5f, "JIAJIETAI", 1234567890);
         
         bike2.ride();
         bike2.printBikeDetails();

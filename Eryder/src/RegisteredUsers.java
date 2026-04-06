@@ -2,7 +2,6 @@
 import java.util.Arrays;
 
 public class RegisteredUsers {
-    
     private String fullName;
     private String emailAddress;
     private String dateOfBirth;
@@ -100,7 +99,7 @@ public class RegisteredUsers {
 
     @Override
     public String toString() {
-        return "RegisteredUsers{" +
+        return "RegisteredUsers" +
                 "fullName='" + fullName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
@@ -109,10 +108,16 @@ public class RegisteredUsers {
                 ", cardExpiryDate='" + cardExpiryDate + '\'' +
                 ", cvv=" + cvv +
                 ", userType='" + userType + '\'' +
-                ", lastThreeTrips=" + Arrays.toString(lastThreeTrips) +
-                '}';
+                ", lastThreeTrips=" + Arrays.toString(lastThreeTrips);
     }
 
-    
+    public double calculateFare(double BASE_FARE) {
+        return BASE_FARE; 
+    }
+
+    public void displayUserType(){
+        System.out.println("Regular User");
+    }
+
 
 }

@@ -7,13 +7,17 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 
 public class BikeService {
+    private static final double BASE_FARE = 3.0;
+
     private String emailAddress;
     private LocalDateTime tripStartTime;
     private String bikeID;
     private Stack<ERyderLog> logStack = new Stack<>();
     private Queue<BikeRequest> logQue = new ArrayDeque<>();
 
-    UserRegistration user = new UserRegistration();
+    RegularUser regularUser;
+    VIPUser vipUser;
+    RegisteredUsers user;
     ActiveRental activeRental;
     List<ActiveRental> activeRentalsList = new LinkedList<>();
 
@@ -95,6 +99,14 @@ public class BikeService {
         
         if (!logQue.isEmpty()){
             logQue.poll();
+        }
+
+        if(user.getUserType().equals("VIP")) {
+            double finalFare = vipUser.calculateFare(BASE_FARE);
+            System.out.println("The final fare is: " + finalFare);
+        }else if (user.getUserType().equals("Regular")) {
+            double finalFare = regularUser.calculateFare(BASE_FARE);
+            System.out.println("The final fare is: " + finalFare);
         }
     }
 

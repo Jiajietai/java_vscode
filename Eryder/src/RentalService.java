@@ -7,7 +7,6 @@ public class RentalService {
     private boolean locationValid;
     private String location;
 
-    UserRegistration user = new UserRegistration();
     ActiveRental activeRental;
     List<ActiveRental> activeRentalsList = new LinkedList<>();
     Stack<ERyderLog> logStack = new Stack<>();
