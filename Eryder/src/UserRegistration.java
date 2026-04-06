@@ -80,7 +80,6 @@ public class UserRegistration {
             System.out.println("Invalid email address. Please restart the registration process.");
             registration();
         }
-
         return true;
     }
 
